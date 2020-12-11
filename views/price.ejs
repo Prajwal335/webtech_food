@@ -1,0 +1,69 @@
+
+ <%- include("partials/header");   -%>
+
+  <section id="price" class="container-fluid">
+
+    <div class="heading text-center">
+        <h1><span>order</span> now</h1>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <form action="/calPrice" class="col-md-7" method="POST">
+
+            <div class="inputBox">
+                <input type="text" name="fname" required autocomplete="on">
+                <h3>full name</h3>
+            </div>
+
+            <div class="inputBox">
+                <input type="tel" name="phNo" required autocomplete="on">
+                <h3>ph.no</h3>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" name="location" required autocomplete="on">
+                <h3>location</h3>
+            </div>
+            <h1 class="foo">Food : <span><%= foodValue %></span> </h1>
+
+
+            <div class="inputBox" id="quantity">
+                <input  type="number" name="quantity" onchange="calTotalPrice(this.value)" required autocomplete="on">
+                <h3>quantity</h3>
+            </div>
+
+             <button  id="pay" style="margin-left: 42%; margin-bottom:2.5rem;" type="submit" name="food" value=<%= foodName %>>Calculate</button>
+
+        </form>
+
+    </div>
+
+
+  </section>
+
+  <!--script type="text/javascript">
+
+       function calTotalPrice(count){
+         const item  = document.querySelector('#item-to');
+         const delivery = document.querySelector('#del-fees');
+         const total = document.querySelector('#to-pay');
+         const pay = document.querySelector('#pay');
+
+
+
+          console.log("hi");
+         const itemValue =   parseInt(item.textContent,10);
+         const deliveryValue = parseInt(delivery.textContent,10);
+         console.log(count);
+         console.log(itemValue);
+         console.log(deliveryValue);
+
+         total.textContent =  (itemValue * count) + deliveryValues
+
+       }
+
+  </script-->
+
+
+<%- include("partials/footer") -%>

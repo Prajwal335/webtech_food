@@ -1,0 +1,67 @@
+
+ <%- include("partials/header");   -%>
+
+  <section id="price" class="container-fluid">
+
+    <div class="heading text-center">
+        <h1><span>order</span> now</h1>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <form action="/final" class="col-md-7" method="POST">
+
+            <div class="inputBox">
+                <input type="text" name="fname" required autocomplete="on" value=<%= fname %>>
+                <h3>full name</h3>
+            </div>
+
+            <div class="inputBox">
+                <input type="tel" name="phNo" required autocomplete="on" value=<%= phNo %>>
+                <h3>ph.no</h3>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" name="location" required autocomplete="on" value=<%= location %>>
+                <h3>location</h3>
+            </div>
+            <h1 class="foo">Food : <span><%= foodValue %></span> </h1>
+
+
+            <div class="inputBox" id="quantity">
+                <input  type="text" name="quantity" onchange="calTotalPrice(this.value)" required autocomplete="on" value=<%= quantity %>>
+                <h3>quantity</h3>
+            </div>
+
+            <table class="pay-cal">
+              <tr>
+                <td><h2>Bill details</h2></td>
+              </tr>
+              <tr>
+                      <td>  <h3>Item Total </h3></td>
+                      <td> <h3 style="text-align:right">₹</h3> </td>
+                      <td> <h3 id="item-to" class="pr" > <%=foodPrice%></h3></td>
+              </tr>
+              <tr>
+                <td>  <h3>Delivery fee </h3></td>
+                 <td><h3 style="text-align:right">₹</h3> </td>
+                <td><h3 id="del-fees" class="pr"> 30 </h3> </td>
+              </tr>
+
+              <tr>
+                    <th>  <h1>To Pay  </h1></th>
+                    <th> <h1 style="text-align:right">₹</h1>  </th>
+                    <th><h1 id="to-pay" class="pr"> <%= foodTotal %> </h1></th>
+              </tr>
+            </table>
+             <button  id="pay" style="margin-left: 42%; margin-bottom:2.5rem;" type="submit" name="food" value=<%= foodName %>>Pay ₹<%= foodTotal %> </button>
+
+        </form>
+
+    </div>
+
+
+  </section>
+
+
+<%- include("partials/footer") -%>

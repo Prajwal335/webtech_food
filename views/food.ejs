@@ -1,0 +1,54 @@
+
+<%- include("partials/header") -%>
+
+
+  <!-- Special section start -->
+
+  <section id="view" class="container-fluid" style="color:#fff;">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 "><img class="view-img" src=<%=foodImg %> alt=""></div>
+        <div class="col-md-4 view-content">
+          <h1><%=foodName%></h1>
+          <span class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+            <%    if(foodStars === 5){   %>
+            <i class="fas fa-star">
+              <%    }else if(foodStars === 4.5){   %>
+              <i class="fas fa-star-half-alt">
+                <%    }else if(foodStars === 4){  %>
+                <i class="far fa-star">
+                  <%    }      %>
+
+
+                </i></span>
+          <p>₹<%=foodPrice%> per plate <i class="fas fa-circle"></i> <%=foodTime%> mins</p>
+          <div class="offer">
+            <h2><i class="fas fa-percent"></i>20% off | Use Hotel</h2>
+            <h2><i class="fas fa-percent"></i> Extra <i class="fas fa-rupee-sign"></i> 30 PhonePe cashback</h2>
+          </div>
+
+           <div class="add-dish">
+             <form class="" action="/price" method="post">
+               <button type="submit" name=<%=foodKey%> value=<%=foodName%> >Order Now</button>
+             </form>
+             <a href="javascript:history.back()"><button>Go Back</button></a>
+           </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <!-- special section end -->
+
+
+
+
+  <!-- footer section starts  -->
+
+  <%- include("partials/footer") -%>

@@ -1,0 +1,34 @@
+
+<%- include("partials/header") -%>
+
+
+  <section id="final" class="container-fluid">
+
+    <div class="row justify-content-center">
+
+      <div class="jumbotron">
+        <h1 class="display-4">Order ,<span class="head">Successfull!</span> </h1>
+
+        <div class="detail">
+          <h3> <pre><span>               Details  </span></pre></h3>
+          <h3> <pre><span>Name</span>        <%=fName %></pre></h3>
+          <h3> <pre><span>Ph.No</span>        <%=phNo %></pre> </h3>
+          <h3> <pre><span>Location</span>      <%=location %> </pre></h3>
+         <h3 > <pre><span>Food</span>         <%=foodName %>      </pre>   </h3>
+        </div>
+
+        <p class="lead" >Thank you , Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+         <h6 class="line">.</h6>
+        <h2>To order another some food press Go-Back</h2>
+        <a href="/"><button>Go Back</button></a>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+  <!-- footer section starts  -->
+
+  <%- include("partials/footer") -%>
