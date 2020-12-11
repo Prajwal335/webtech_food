@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Responsive Food Delivery Website Design</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="fonts/fontawesome.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/11081e2896.js" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Lemonada:wght@500&display=swap" rel="stylesheet">
+  <script src="js/index.js" charset="utf-8"></script>
+
+   <style>
+       .raj{
+         background-color: #000;
+       }
+
+
+   </style>
+
+</head>
+
+
+<body>
+
+  <!--  header section starts -->
+  <header id="header">
+    <nav>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/">special</a></li>
+        <li><a href="/">about</a></li>
+        <li><a href="/">dish</a></li>
+        <li><a href="/">contact</a></li>
+      </ul>
+    </nav>
+
+
+    <i class="fas fa-hamburger"></i>
+    <a href="#" class="logo"><img src="images/logo.jpg" alt="logo image" width="70px" height="50px"></a>
+  </header>
+
+  <!-- header section ends -->
+
+
+  <section id="price" class="container-fluid">
+
+    <div class="heading text-center">
+        <h1><span>order</span> now</h1>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <form action="" class="col-md-7">
+
+            <div class="inputBox">
+                <input type="text" required>
+                <h3>full name</h3>
+            </div>
+
+            <div class="inputBox">
+                <input type="tel" required>
+                <h3>ph.no</h3>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" required>
+                <h3>location</h3>
+            </div>
+            <h1 class="foo">Food : <span>Burger</span> </h1>
+
+
+            <div class="inputBox">
+                <input onchange="calTotalPrice()" type="number" required>
+                <h3>quantity</h3>
+            </div>
+
+            <table class="pay-cal">
+              <tr>
+                <td><h2>Bill details</h2></td>
+              </tr>
+              <tr>
+                      <td>  <h3>Item Total </h3></td>
+                      <td>  <h3 id="item-to" class="pr"> ₹60 </h3></td>
+              </tr>
+              <tr>
+                <td>  <h3>Delivery fee </h3></td>
+                <td>  <h3 id="del-fees" class="pr"> ₹60 </h3></td>
+              </tr>
+
+              <tr>
+                    <th>  <h1>To Pay  </h1></th>
+                    <th> <h1 id="to-pay" class="pr">  ₹60</h1></th>
+              </tr>
+            </table>
+
+
+            <input id="pay" style="margin-left: 42%; margin-bottom:2.5rem;" type="submit" value="Pay ₹60">
+
+        </form>
+
+    </div>
+
+  </section>
+
+
+
+
+<!-- footer section starts  -->
+
+<section id="footer" class="container-fluid">
+
+<div class="row align-items-center">
+
+<div class="col-md-4 brand">
+
+<a href="#" class="logo"><img src="images/logo.jpg" alt=""></a>
+
+<div class="icons">
+   <a href="#" class="fab fa-facebook-square"></a>
+   <a href="#" class="fab fa-twitter-square"></a>
+   <a href="#" class="fab fa-instagram-square"></a>
+   <a href="#" class="fab fa-pinterest-square"></a>
+</div>
+
+</div>
+
+<div class="col-md-4 footer-links">
+<h3>links:</h3>
+<a href="/">home</a>
+<a href="/">special</a>
+<a href="/">about</a>
+<a href="/">dish</a>
+<a href="/">contact</a>
+</div>
+
+<div class="col-md-4 text-center text-md-left letter">
+
+</div>
+
+</div>
+
+<h1>&copy; copyright @ 2020 by <span>mr. web designer</span></h1>
+
+</section>
+
+ <!-- footer section ends  -->
+
+
+
+  <!--  script part starts  -->
+   <script type="text/javascript">
+
+        function calTotalPrice(this){
+          const item  = document.querySelector('#item-to');
+          const delivery = document.querySelector('#del-fees');
+          const total = document.querySelector('#to-pay');
+          const pay = document.querySelector('#pay');
+          const count = this.textContent;
+
+          total.textContent =  (item.textContent * count) + delivery.textContent
+          pay.textContent = 'Pay '
+        }
+
+   </script>
+
+</body>
+
+</html>
